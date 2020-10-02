@@ -1,0 +1,14 @@
+<h1>Maybees</h1>
+<h2>Apiaries</h2>
+<br />
+{% if apiaries %}
+    <ul>
+    {% for apiary in apiaries %}
+        <li><a href="{% url 'apiary_detail' apiary.id %}">{{ apiary.name }}</a> 
+        {{ apiary.description }} ({{ apiary.start_date }} - {{ apiary.end_date }} )</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No apiaries being tracked.</p>
+{% endif %}
+<a href="../admin/colony/apiary/add">Create a new apiary</a> 

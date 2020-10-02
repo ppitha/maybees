@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'colony/style.css' %}">
+
+<h1>Hive "{{hive.name}}"</h1>
+
+{{hive.description}}
+<p>Started on {{hive.start_date}}</p>
+{% if hive.end_date %}
+<p>Ended on {{hive.end_date}}</p>
+{% endif %}
+
+{% if hive.primary_image %}
+<div class="box">
+    <img src="{{ hive.primary_image.url}}" alt="{{ hive.name }}">
+</div>
+{% else %}
+Picture coming!
+<br>
+{% endif %}
+
+{% if colonies %}
+    <ul>
+    {% for colony in colonies %}
+        <li><a href="{% url 'colony_detail' colony.id %}">Colony {{colony.name}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <br />
+    No colonies here (yet).
+{% endif %}
