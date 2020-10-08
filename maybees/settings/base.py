@@ -83,21 +83,7 @@ WSGI_APPLICATION = 'maybees.wsgi.application'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': '', # means localhost
-        'PORT': '',
-        'USER': 'postgres',
-        'NAME': 'postgres',
-        'PASSWORD': 'don6t)PinkFleeze',
-    }
-}
-
+# DATABASES defined in the specific environment scripts
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
