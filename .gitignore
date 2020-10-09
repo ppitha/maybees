@@ -1,5 +1,4 @@
 *.log
 __pycache__/
 /media/images/
-/colony/migrations/*.py
 !__init__.py
